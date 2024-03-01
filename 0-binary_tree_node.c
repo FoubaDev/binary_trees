@@ -8,15 +8,23 @@
  */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
-	binary_tree_t *new_node = NULL;
+	/* BT Node  declation + DT */
+	binary_tree_t *n_node;
 
-	new_node = malloc(sizeof(binary_tree_t));
-	if (!new_node)
+	/* Memory allocation for n_node var*/
+	n_node = (binary_tree_t *)malloc(sizeof(binary_tree_t));
+
+	if (n_node == NULL)
+	{
 		return (NULL);
+	}
 
-	new_node->parent = parent;
-	new_node->n = value;
-	new_node->left = NULL;
-	new_node->right = NULL;
-	return (new_node);
+	/* values assigment */
+	n_node->parent = parent;
+	n_node->n = value;
+	n_node->left = NULL;
+	n_node->right = NULL;
+
+	/* n_node's PTR to be returned */
+	return (n_node);
 }
